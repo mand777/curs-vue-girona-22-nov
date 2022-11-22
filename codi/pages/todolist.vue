@@ -2,8 +2,6 @@
   <v-container>
     <v-row>
       <v-col cols="12" md="6">
-        TASQUES
-        <br>
         <v-textarea
           label="Tasques"
           placeholder="p.e: fer el llit"
@@ -11,16 +9,14 @@
           v-model="laNovaTasca"
 
         ></v-textarea>
-        <v-btn @click="afegirTasca()">afegir tasca</v-btn>  
+        <v-btn @click="afegirTasca()"color=blue :disabled=!tincText>afegir tasca</v-btn> 
       </v-col>
-      
       <v-col cols="12" sm="6">
         TO DO LIST
         <br>
         <br>
         <v-row class="tasca" v-for="(el,index) in tasques">
             <v-col cols="8">
-                {{el}}
                 <h2>{{el.text}} - {{index}}</h2>
             </v-col>
             <v-col cols="4">
@@ -38,12 +34,18 @@ export default{
     methods:{
         afegirTasca(){
             console.log("Afegint tasca...")
+            
+            if(this.laNovaTasca.length<=0){
+                alert("El camp tasca no pot estar buit")
+                return
+            }
            
             var tasca={}
             tasca.text=this.laNovaTasca
             tasca.feta=false
 
             this.tasques.push(tasca)
+            this.laNovaTasca=""
         }
     },
     data(){
@@ -64,6 +66,16 @@ export default{
                 }]
         }
        
+    },
+    computed:{
+        tincText(){
+            if(this.laNovaTasca.length<=0){
+                return false
+            }else{
+                return true
+            }
+        }
+
     }
 }
     

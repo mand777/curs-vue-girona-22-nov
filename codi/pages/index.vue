@@ -18,7 +18,7 @@
         Resultat
         <br>
         Mostres: {{tamanyArray}}
-        Mostres superiors a 50 graus:{{}}
+        Mostres superiors a 50 graus:{{mesDe50}}
         <br>
 
         <v-sparkline

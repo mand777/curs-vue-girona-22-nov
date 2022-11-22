@@ -18,6 +18,7 @@
         Resultat
         <br>
         Mostres: {{tamanyArray}}
+        <br>
         Mostres superiors a 50 graus:{{mesDe50}}
         <br>
 
@@ -46,7 +47,8 @@
       return{
         gradient:["red","blue"],
         temperatura:0,
-        temperatures:[]
+        temperatures:[],
+        usuaris:[]
       }
     },
     methods:{
@@ -103,6 +105,12 @@
           
         })
         return mostresDeMesDe50Graus
+      },
+      usuarisMesDe18(){
+
+      },
+      usuarisMenysde18(){
+
       }
 
     }

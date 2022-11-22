@@ -8,8 +8,10 @@
           label="Tasques"
           placeholder="p.e: fer el llit"
           outlined
+          v-model="laNovaTasca"
+
         ></v-textarea>
-        <v-btn text>afegir tasca</v-btn>  
+        <v-btn @click="afegirTasca()">afegir tasca</v-btn>  
       </v-col>
       
       <v-col cols="12" sm="6">
@@ -33,11 +35,23 @@
 
 <script>
 export default{
+    methods:{
+        afegirTasca(){
+            console.log("Afegint tasca...")
+           
+            var tasca={}
+            tasca.text=this.laNovaTasca
+            tasca.feta=false
+
+            this.tasques.push(tasca)
+        }
+    },
     data(){
         return{
+            laNovaTasca:"",
             tasques:[
                 {
-                    text: "Fer el llit",
+                    text:"Fer el llit",
                     feta:true
                 },
                 {

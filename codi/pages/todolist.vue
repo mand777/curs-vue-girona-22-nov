@@ -16,15 +16,17 @@
         TO DO LIST
         <br>
         <br>
-        <v-row class="tasca" v-for="tasca in tasques">
+        <v-row class="tasca" v-for="(el,index) in tasques">
             <v-col cols="8">
-                <h2>{{tasca.text}}</h2>
+                {{el}}
+                <h2>{{el.text}} - {{index}}</h2>
             </v-col>
             <v-col cols="4">
-                <v-checkbox v-model="tasca.feta"></v-checkbox>
+                <v-checkbox v-model="el.feta"></v-checkbox>
             </v-col>   
         </v-row>
       </v-col>
+
     </v-row>
   </v-container>
 </template>

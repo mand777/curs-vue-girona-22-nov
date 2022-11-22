@@ -12,6 +12,7 @@
         <v-btn @click="afegir()">afegir</v-btn>
         <v-btn @dblclick="netejar()">netejar</v-btn>
         <v-btn @mouseenter="borrar()">borrar l'últim</v-btn>
+        <v-btn @click="temperaturesAleatories()">aleatori</v-btn>
       </v-col>
       <v-col cols="12" md="6">
        Resultat
@@ -19,6 +20,7 @@
 
         <v-sparkline
         :value="temperatures"
+        :gradient="['red','blue']" 
         ></v-sparkline>
     
         <pre>
@@ -34,6 +36,7 @@
   export default{
     data(){
       return{
+        gradient:["red","blue"],
         temperatura:0,
         temperatures:[33,24,41,23,44,11,23]
       }
@@ -58,6 +61,25 @@
       borrar(){
         console.log("Borrant l'últim")
         this.temperatures.pop()
+      },
+      temperaturesAleatories(){
+        console.log("Afegint temperatures aleatòries")
+        //array amb 100 valors aleatoris creem array buit
+        var nouArray=[]
+        //repetim 100 vegades
+        for(var i=0;i<100;i++){
+          //afegim valors
+          var valorAleatori=Math.random()*100
+          var valorAleatoriEnter=this.processarEnter(valorAleatori)
+
+          nouArray.push(valorAleatoriEnter)
+        }
+        //Assignem al array del component
+        this.temperatures=nouArray
+
+      },
+      processarEnter(val){
+        return parseInt(val)
       }
     }
   }

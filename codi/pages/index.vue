@@ -47,8 +47,8 @@
       return{
         gradient:["red","blue"],
         temperatura:0,
-        temperatures:[],
-        usuaris:[]
+        temperatures:[]
+        
       }
     },
     methods:{
@@ -105,14 +105,17 @@
           
         })
         return mostresDeMesDe50Graus
-      },
-      usuarisMesDe18(){
-
-      },
-      usuarisMenysde18(){
-
       }
-
+    },
+    whatch:{
+      temperatures(newValue,oldValue){
+        console.log(newValue,oldValue)
+      },
+      mesDe50(newValue,oldValue){
+        if(newValue>55){
+          alert("ALERTA")
+        }
+      }
     }
   }
 </script>

@@ -15,7 +15,10 @@
         <v-btn @click="temperaturesAleatories()">aleatori</v-btn>
       </v-col>
       <v-col cols="12" md="6">
-       Resultat
+        Resultat
+        <br>
+        Mostres: {{tamanyArray}}
+        Mostres superiors a 50 graus:{{}}
         <br>
 
         <v-sparkline
@@ -90,6 +93,16 @@
     computed:{
       tamanyArray(){
         return this.temperatures.length
+      },
+      mesDe50(){
+        var mostresDeMesDe50Graus=0
+        this.temperatures.forEach((temperatura) => {
+          if(temperatura>50){
+            mostresDeMesDe50Graus++
+          }
+          
+        })
+        return mostresDeMesDe50Graus
       }
 
     }

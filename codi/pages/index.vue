@@ -10,6 +10,8 @@
 
         ></v-text-field>
         <v-btn @click="afegir()">afegir</v-btn>
+        <v-btn @dblclick="netejar()">netejar</v-btn>
+        <v-btn @mouseenter="borrar()">borrar l'últim</v-btn>
       </v-col>
       <v-col cols="12" md="6">
        Resultat
@@ -47,6 +49,15 @@
         console.log
         ("El tipus de temperatura és",typeof(tmp))
         this.temperatures.push(tmp)
+      },
+      netejar(){
+        console.log("Netejant...")
+        this.temperatures=[]
+        console.log(this.temperatures)
+      },
+      borrar(){
+        console.log("Borrant l'últim")
+        this.temperatures.pop()
       }
     }
   }

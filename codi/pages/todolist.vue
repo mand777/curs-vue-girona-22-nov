@@ -12,8 +12,9 @@
         <v-btn text>afegir tasca</v-btn>  
       </v-col>
       
-      <v-col cols="12" md="6">
+      <v-col cols="12" sm="6">
         TO DO LIST
+        <br>
         <br>
         <v-row class="tasca" v-for="tasca in tasques">
             <v-col cols="8">
@@ -34,15 +35,15 @@ export default{
         return{
             tasques:[
                 {
-                    tasca: "Fer el llit",
+                    text: "Fer el llit",
                     feta:true
                 },
                 {
-                    tasca:"Fer els deures",
+                    text:"Fer els deures",
                     feta:true
                 },
                 {
-                    tasca:"Anar a comprar",
+                    text:"Anar a comprar",
                     feta:false
                 }]
         }
@@ -52,3 +53,9 @@ export default{
     
     
 </script>
+<style>
+.tasca{
+    background-color:darkgrey;
+    margin-bottom: 10px;
+    }
+</style>

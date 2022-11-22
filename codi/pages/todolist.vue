@@ -9,7 +9,7 @@
           v-model="laNovaTasca"
 
         ></v-textarea>
-        <v-btn @click="afegirTasca()"color=blue :disabled=!tincText>afegir tasca</v-btn> 
+        <v-btn @click="afegirTasca()" :disabled=!tincText>afegir tasca</v-btn> 
       </v-col>
       <v-col cols="12" sm="6">
         TO DO LIST

@@ -34,11 +34,16 @@
 
 <script>
   export default{
+    mounted(){
+      //iniciem array de
+      this.temperaturesAleatories()
+
+    },
     data(){
       return{
         gradient:["red","blue"],
         temperatura:0,
-        temperatures:[33,24,41,23,44,11,23]
+        temperatures:[]
       }
     },
     methods:{
@@ -81,6 +86,12 @@
       processarEnter(val){
         return parseInt(val)
       }
+    },
+    computed:{
+      tamanyArray(){
+        return this.temperatures.length
+      }
+
     }
   }
 </script>

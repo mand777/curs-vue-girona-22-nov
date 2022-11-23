@@ -19,6 +19,12 @@
             <v-col col="12" md="6">
                 <div style="font-size:40px">{{camp1}}</div>
                 <div style="font-size:40px" v-text="camp2"></div>
+                <mostraCamps
+                    :parametre1="camp1"
+                    :parametre2="camp2"
+                />
+
+
                 <div style="font-size:40px" v-html="camp1.toLowerCase()+camp2"></div>
 
             </v-col>

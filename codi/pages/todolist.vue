@@ -74,8 +74,16 @@ export default{
             }else{
                 return true
             }
+        },
+        tasquesFetes(){
+            var tasquesFetesVar=[]
+            this.tasques.forEach((tasca));{
+                if(tasca.feta==true){
+                    tasquesFetesVar.push(tasca)
+                }   
+            }
+            return tasquesFetesVar.length
         }
-
     }
 }
     

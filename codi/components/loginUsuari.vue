@@ -17,8 +17,8 @@
                 <div v-else style="color:red">Ep, cal posar alguna majúscula i minúscula</div>
                 <div v-if="siHiHaMesDe6Caracters" style="color:green">Molt bé, tens més de 6 caràcters</div>
                 <div v-else style="color:red">Cal posar mínim 6 caràcters</div>
-                <div v-if="siHiHaCaractersEspecials" style="color:green">Molt bé, tens algun caràcter especial</div>
-                <div v-else style="color:red">Cal posar algun caràcter especial</div>
+                <div v-if="siHiHaCaractersEspecials" style="color:green">Molt bé, tens algun símbol d'exclamació</div>
+                <div v-else style="color:red">Cal posar algun símbol d'exclamació</div>
                 <v-btn>login</v-btn>
 
             </v-col>
@@ -51,7 +51,8 @@ export default{
 
             for(var i=0;i<textOriginal.length;i++){
                 let caracter=textOriginal[i]
-             if(this.conteLletres(caracter)){
+
+                if(this.conteLletres(caracter)){
 
                 if(caracter.toUpperCase()===caracter){
                     hihaMajuscules=true
@@ -75,8 +76,18 @@ export default{
 
         },
         siHiHaCaractersEspecials(){
-            return false
-
+            let textOriginal=this.contrasenya
+            let hiHaUnSimboldExclamacio=false
+            //per cada lletra de la cadena de text mirem si 
+            for(let i=0;i<textOriginal.length;i++){
+                let caracter=textOriginal[i]
+                //la lletra es un simbol dexclamacio i 
+                if(caracter=="!"){
+                //si ho es, canviem la variable boleana
+                    hiHaUnSimboldExclamacio=true
+                }    
+            }
+            return hiHaUnSimboldExclamacio
         }
     } 
 }

@@ -1,0 +1,3 @@
+<template>
+    <loginUsuari/>
+</template>

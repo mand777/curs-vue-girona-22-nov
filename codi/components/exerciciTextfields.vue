@@ -13,6 +13,7 @@
                 </v-text-field>
                 <v-btn @click="mostraElsTextos()">mostrar a la consola</v-btn>
                 <br>
+                <br>
                 <v-btn @click="netejarElsTextos()">netejar camp de text</v-btn>
             </v-col>
 
